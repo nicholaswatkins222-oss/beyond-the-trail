@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond the Trail Media — Brand Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ─── CSS Variables ─────────────────────────────────────────── */
+    :root {
+      --white:       #ffffff;
+      --off-white:   #f7f7f5;
+      --green:       #2d4a3e;
+      --green-dark:  #1e3329;
+      --green-light: #3d6454;
+      --green-muted: rgba(45,74,62,.08);
+      --amber:       #f0a050;
+      --amber-dark:  #d98a3a;
+      --amber-glow:  rgba(240,160,80,.22);
+      --charcoal:    #1a1a1a;
+      --gray-600:    #4b5563;
+      --gray-400:    #9ca3af;
+      --gray-200:    #e5e7eb;
+      --gray-100:    #f3f4f6;
+
+      --font-h: 'Cormorant Garamond', serif;
+      --font-b: 'DM Sans', sans-serif;
+
+      --shd-sm:  0 2px 6px rgba(45,74,62,.10), 0 1px 2px rgba(45,74,62,.06);
+      --shd-md:  0 4px 16px rgba(45,74,62,.12), 0 2px 6px rgba(45,74,62,.07);
+      --shd-lg:  0 10px 32px rgba(45,74,62,.16), 0 4px 12px rgba(45,74,62,.09);
+      --shd-amb: 0 4px 20px rgba(240,160,80,.30), 0 2px 8px rgba(240,160,80,.18);
+
+      --r-sm:   4px;
+      --r:      8px;
+      --r-md:   12px;
+      --r-lg:   16px;
+      --r-xl:   24px;
+      --r-full: 9999px;
+    }
+
+    /* ─── Reset ────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font-b);
+      color: var(--charcoal);
+      background: var(--off-white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ─── Brand Kit Layout ──────────────────────────────────────── */
+    .bk-page { max-width: 960px; margin: 0 auto; padding: 60px 24px 100px; }
+
+    .bk-title {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .bk-subtitle {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      margin-bottom: 60px;
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 24px;
+    }
+
+    .bk-section { margin-bottom: 64px; }
+    .bk-section-label {
+      font-family: var(--font-b);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+    .bk-section-title {
+      font-family: var(--font-h);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--green);
+    }
+
+    /* ─── Logo ─────────────────────────────────────────────────── */
+    .logo-row {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .logo-swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-swatch span {
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 40px;
+      border-radius: var(--r-lg);
+      border: 1px solid var(--gray-200);
+    }
+    .logo-box.light { background: var(--white); }
+    .logo-box.dark  { background: var(--green-dark); border-color: var(--green-dark); }
+    .logo-box img   { height: 80px; width: auto; }
+    .logo-box.dark img { filter: invert(1) brightness(2); }
+
+    /* ─── Colors ───────────────────────────────────────────────── */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .color-swatch {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      box-shadow: var(--shd-sm);
+    }
+    .color-swatch__chip {
+      height: 80px;
+    }
+    .color-swatch__info {
+      background: var(--white);
+      padding: 10px 12px;
+      border-top: 1px solid var(--gray-100);
+    }
+    .color-swatch__name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .color-swatch__hex {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      font-family: monospace;
+    }
+    .color-swatch__role {
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    /* ─── Typography ───────────────────────────────────────────── */
+    .type-row { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--gray-200); }
+    .type-row:last-child { border-bottom: none; margin-bottom: 0; }
+    .type-meta {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+    .type-sample-h1 { font-family: var(--font-h); font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; color: var(--green); letter-spacing: -0.03em; line-height: 1.1; }
+    .type-sample-h2 { font-family: var(--font-h); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--green); letter-spacing: -0.02em; line-height: 1.15; }
+    .type-sample-h3 { font-family: var(--font-h); font-size: 1.35rem; font-weight: 600; color: var(--green); letter-spacing: -0.01em; }
+    .type-sample-body { font-family: var(--font-b); font-size: 1rem; color: var(--gray-600); line-height: 1.75; max-width: 600px; }
+    .type-sample-label { font-family: var(--font-b); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); }
+    .type-info { font-size: 0.78rem; color: var(--gray-400); margin-top: 6px; }
+
+    /* ─── Buttons ──────────────────────────────────────────────── */
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-b);
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      padding: 12px 24px;
+      border-radius: var(--r-full);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(.34,1.56,.64,1);
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: var(--shd-md);
+    }
+    .btn-primary:hover { background: var(--green-dark); box-shadow: var(--shd-lg); transform: translateY(-1px); }
+    .btn-amber {
+      background: var(--amber);
+      color: var(--white);
+      box-shadow: var(--shd-amb);
+    }
+    .btn-amber:hover { background: var(--amber-dark); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
+    }
+    .btn-outline:hover { background: var(--green-muted); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.6);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+    .btn-sm { padding: 8px 18px; font-size: 0.82rem; }
+    .btn-lg { padding: 16px 36px; font-size: 0.95rem; }
+
+    .btn-dark-bg {
+      background: var(--green);
+      padding: 28px 32px;
+      border-radius: var(--r-lg);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ─── Section Header Pattern ───────────────────────────────── */
+    .section-header {
+      margin-bottom: 40px;
+    }
+    .section-header.centered { text-align: center; }
+    .section-label {
+      font-family: var(--font-b);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+    .section-divider {
+      width: 44px;
+      height: 3px;
+      background: var(--amber);
+      border-radius: var(--r-full);
+      margin-bottom: 14px;
+    }
+    .section-divider.c { margin-left: auto; margin-right: auto; }
+    .section-heading {
+      font-family: var(--font-h);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--gray-600);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+    .section-header.centered .section-sub { margin-left: auto; margin-right: auto; }
+
+    /* ─── Cards ────────────────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    /* Service Card */
+    .service-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shd-sm);
+      border: 1px solid var(--gray-100);
+      transition: box-shadow 0.22s ease, transform 0.22s cubic-bezier(.34,1.56,.64,1);
+    }
+    .service-card:hover { box-shadow: var(--shd-lg); transform: translateY(-3px); }
+    .service-card__icon {
+      width: 48px; height: 48px;
+      background: var(--green-muted);
+      border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+    .service-card__title {
+      font-family: var(--font-h);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .service-card__desc {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+    .service-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--amber);
+      transition: gap 0.18s ease;
+    }
+    .service-card__link:hover { gap: 10px; }
+
+    /* Testimonial Card */
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shd-sm);
+      border: 1px solid var(--gray-100);
+    }
+    .testimonial-card__quote {
+      font-family: var(--font-h);
+      font-size: 3rem;
+      line-height: 1;
+      color: rgba(240,160,80,.35);
+      margin-bottom: 4px;
+    }
+    .testimonial-card__stars {
+      color: #f59e0b;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testimonial-card__text {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-card__avatar {
+      width: 40px; height: 40px;
+      border-radius: var(--r-full);
+      background: var(--green);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .testimonial-card__name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+    .testimonial-card__meta {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+    }
+
+    /* Blog Card */
+    .blog-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shd-sm);
+      border: 1px solid var(--gray-100);
+      transition: box-shadow 0.22s ease, transform 0.22s cubic-bezier(.34,1.56,.64,1);
+    }
+    .blog-card:hover { box-shadow: var(--shd-lg); transform: translateY(-3px); }
+    .blog-card__img {
+      height: 180px;
+      background: linear-gradient(135deg, var(--green-light), var(--green-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 3rem;
+    }
+    .blog-card__body { padding: 20px; }
+    .blog-card__tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+    .blog-card__title {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .blog-card__excerpt {
+      font-size: 0.83rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .blog-card__meta {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Pricing Card */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shd-sm);
+      border: 1px solid var(--gray-200);
+      position: relative;
+    }
+    .pricing-card.featured {
+      background: var(--green);
+      border-color: var(--green);
+      box-shadow: var(--shd-lg);
+    }
+    .pricing-card__badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--amber);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: var(--r-full);
+      box-shadow: var(--shd-amb);
+    }
+    .pricing-card__name {
+      font-family: var(--font-h);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .pricing-card.featured .pricing-card__name { color: var(--white); }
+    .pricing-card__price {
+      font-family: var(--font-h);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-card.featured .pricing-card__price { color: var(--amber); }
+    .pricing-card__sub {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      margin-bottom: 20px;
+    }
+    .pricing-card.featured .pricing-card__sub { color: rgba(255,255,255,0.6); }
+    .pricing-card__divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin-bottom: 20px;
+    }
+    .pricing-card.featured .pricing-card__divider { background: rgba(255,255,255,0.15); }
+    .pricing-card__feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: var(--gray-600);
+      margin-bottom: 10px;
+    }
+    .pricing-card.featured .pricing-card__feature { color: rgba(255,255,255,0.85); }
+    .pricing-card__feature i {
+      color: var(--amber);
+      margin-top: 3px;
+      flex-shrink: 0;
+      font-size: 0.78rem;
+    }
+
+    /* Stat Badge */
+    .stats-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .stat-badge {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-lg);
+      padding: 20px 24px;
+      text-align: center;
+      box-shadow: var(--shd-sm);
+      min-width: 140px;
+    }
+    .stat-badge__num {
+      font-family: var(--font-h);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-badge__label {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+
+    /* Nav Preview */
+    .nav-preview {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shd-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .nav-preview__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 72px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .nav-preview__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-preview__logo img {
+      height: 42px;
+      width: auto;
+    }
+    .nav-preview__links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-preview__links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+    .nav-preview__links a:hover,
+    .nav-preview__links a.active { color: var(--green); font-weight: 600; }
+    .nav-preview__cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-preview__phone {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-preview__phone i { color: var(--amber); font-size: 0.8rem; }
+    .nav-preview__hero {
+      height: 180px;
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, var(--green-light) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 24px;
+    }
+    .nav-preview__hero h2 {
+      font-family: var(--font-h);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+    .nav-preview__hero p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+    }
+  </style>
+</head>
+<body>
+  <div class="bk-page">
+    <h1 class="bk-title">Beyond the Trail Media</h1>
+    <p class="bk-subtitle">Brand Kit — Colors, Typography, Components &amp; Patterns</p>
+
+    <!-- ── LOGO ─────────────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Identity</p>
+      <h2 class="bk-section-title">Logo</h2>
+      <div class="logo-row">
+        <div class="logo-swatch">
+          <div class="logo-box light">
+            <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media logo" />
+          </div>
+          <span>On White</span>
+        </div>
+        <div class="logo-swatch">
+          <div class="logo-box dark">
+            <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media logo" />
+          </div>
+          <span>On Dark Green (inverted)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── COLORS ────────────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Palette</p>
+      <h2 class="bk-section-title">Colors</h2>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#2d4a3e;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">Green</div>
+            <div class="color-swatch__hex">#2d4a3e</div>
+            <div class="color-swatch__role">Primary brand, CTAs, headings</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#1e3329;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">Green Dark</div>
+            <div class="color-swatch__hex">#1e3329</div>
+            <div class="color-swatch__role">Hover states, footer</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#3d6454;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">Green Light</div>
+            <div class="color-swatch__hex">#3d6454</div>
+            <div class="color-swatch__role">Gradient, secondary green</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#f0a050;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">Amber</div>
+            <div class="color-swatch__hex">#f0a050</div>
+            <div class="color-swatch__role">Accent, labels, highlights</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#d98a3a;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">Amber Dark</div>
+            <div class="color-swatch__hex">#d98a3a</div>
+            <div class="color-swatch__role">Amber hover states</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#ffffff; border:1px solid #e5e7eb;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">White</div>
+            <div class="color-swatch__hex">#ffffff</div>
+            <div class="color-swatch__role">Page background, cards</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#f7f7f5;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">Off-White</div>
+            <div class="color-swatch__hex">#f7f7f5</div>
+            <div class="color-swatch__role">Alternate section bg</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch__chip" style="background:#1a1a1a;"></div>
+          <div class="color-swatch__info">
+            <div class="color-swatch__name">Charcoal</div>
+            <div class="color-swatch__hex">#1a1a1a</div>
+            <div class="color-swatch__role">Body text</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TYPOGRAPHY ────────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Fonts</p>
+      <h2 class="bk-section-title">Typography</h2>
+
+      <div class="type-row">
+        <p class="type-meta">Section Label — DM Sans 600, 0.72rem, 0.14em tracking, uppercase</p>
+        <p class="type-sample-label">Real Estate Photography · Reno, Nevada</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">H1 — Cormorant Garamond 700, clamp(2.2–3.4rem), −0.03em tracking</p>
+        <p class="type-sample-h1">Photos That Sell Homes Faster</p>
+        <p class="type-info">Used for hero headlines</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">H2 — Cormorant Garamond 700, clamp(1.6–2.4rem), −0.02em tracking</p>
+        <p class="type-sample-h2">Why Realtors Choose Beyond the Trail</p>
+        <p class="type-info">Used for section headings</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">H3 — Cormorant Garamond 600, 1.35rem</p>
+        <p class="type-sample-h3">Adventurer Package — $225</p>
+        <p class="type-info">Used for card titles, package names</p>
+      </div>
+      <div class="type-row">
+        <p class="type-meta">Body — DM Sans 400, 1rem, 1.75 line-height</p>
+        <p class="type-sample-body">Professional listing photography that helps Reno realtors win more listings, close deals faster, and earn higher commissions. Drone photos, floor plans, and video — all in one package, delivered in 24–48 hours.</p>
+        <p class="type-info">Used for all body copy and descriptions</p>
+      </div>
+    </section>
+
+    <!-- ── BUTTONS ───────────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Interactive</p>
+      <h2 class="bk-section-title">Buttons</h2>
+
+      <p style="font-size:0.78rem;color:var(--gray-400);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">On Light Background</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="#"><i class="fa-regular fa-calendar"></i> Schedule a Shoot</a>
+        <a class="btn btn-amber" href="#"><i class="fa-solid fa-arrow-right"></i> View Packages</a>
+        <a class="btn btn-outline" href="#">See the Work</a>
+        <a class="btn btn-primary btn-sm" href="#">Book Now</a>
+      </div>
+
+      <p style="font-size:0.78rem;color:var(--gray-400);margin:24px 0 12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">On Dark Background (Ghost)</p>
+      <div class="btn-dark-bg">
+        <a class="btn btn-ghost btn-lg" href="#"><i class="fa-regular fa-calendar"></i> Schedule a Shoot</a>
+        <a class="btn btn-amber" href="#"><i class="fa-solid fa-images"></i> View Portfolio</a>
+      </div>
+    </section>
+
+    <!-- ── SECTION HEADER PATTERN ────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Layout</p>
+      <h2 class="bk-section-title">Section Header Pattern</h2>
+      <div style="background:var(--white);border-radius:var(--r-lg);padding:48px;box-shadow:var(--shd-sm);border:1px solid var(--gray-100);">
+        <div class="section-header centered">
+          <p class="section-label">Why It Matters</p>
+          <div class="section-divider c"></div>
+          <h2 class="section-heading">Professional Photos That Win More Listings</h2>
+          <p class="section-sub">Realtors who use professional photography sell homes 32% faster and earn 47% more per square foot. Give your listings the edge they deserve.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NAVIGATION PREVIEW ────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Navigation</p>
+      <h2 class="bk-section-title">Nav + Hero Preview</h2>
+      <div class="nav-preview">
+        <div class="nav-preview__bar">
+          <div class="nav-preview__logo">
+            <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" />
+          </div>
+          <ul class="nav-preview__links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="nav-preview__cta">
+            <span class="nav-preview__phone"><i class="fa-solid fa-phone"></i> 775-338-5537</span>
+            <a class="btn btn-primary btn-sm" href="#">Book a Shoot</a>
+          </div>
+        </div>
+        <div class="nav-preview__hero">
+          <h2>Professional Listing Photos That Sell</h2>
+          <p>Reno's trusted real estate photography team — drone, floor plans &amp; more</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+            <a class="btn btn-amber btn-sm" href="#"><i class="fa-regular fa-calendar"></i> Schedule a Shoot</a>
+            <a class="btn btn-ghost btn-sm" href="#">View Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICE CARDS ─────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Components</p>
+      <h2 class="bk-section-title">Service Cards</h2>
+      <div class="cards-grid">
+        <div class="service-card">
+          <div class="service-card__icon"><i class="fa-solid fa-camera"></i></div>
+          <h3 class="service-card__title">MLS Photography</h3>
+          <p class="service-card__desc">HDR-processed listing photos that make every room look its best. Delivered in 24 hours.</p>
+          <a class="service-card__link" href="#">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i class="fa-solid fa-helicopter"></i></div>
+          <h3 class="service-card__title">Drone Photography</h3>
+          <p class="service-card__desc">FAA-compliant aerial shots that showcase property, lot, and neighborhood — 68% more clicks.</p>
+          <a class="service-card__link" href="#">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i class="fa-solid fa-cube"></i></div>
+          <h3 class="service-card__title">3D Floor Plans</h3>
+          <p class="service-card__desc">Interactive floor plans with photos let buyers explore before showing. Pre-qualify leads automatically.</p>
+          <a class="service-card__link" href="#">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i class="fa-solid fa-video"></i></div>
+          <h3 class="service-card__title">Listing Videos</h3>
+          <p class="service-card__desc">Social-ready video walkthroughs and neighborhood highlight reels, edited and ready to post.</p>
+          <a class="service-card__link" href="#">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRICING CARDS ─────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Pricing</p>
+      <h2 class="bk-section-title">Package Cards</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card__name">Adventurer</div>
+          <div class="pricing-card__price">$225</div>
+          <div class="pricing-card__sub">Perfect for standard listings</div>
+          <div class="pricing-card__divider"></div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> MLS photos</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> Drone photos</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> B&amp;W 2D floor plan</div>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__name">Explorer</div>
+          <div class="pricing-card__price">$325</div>
+          <div class="pricing-card__sub">Best value for active agents</div>
+          <div class="pricing-card__divider"></div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> MLS photos</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> Drone photos</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> Premium 2D floor plan</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> Interactive floor plan</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__name">Trailblazer</div>
+          <div class="pricing-card__price">$500</div>
+          <div class="pricing-card__sub">Luxury &amp; premium listings</div>
+          <div class="pricing-card__divider"></div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> MLS + drone photos</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> Drone video</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> Neighborhood video</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> 3D premium floor plan</div>
+          <div class="pricing-card__feature"><i class="fa-solid fa-check"></i> Social media video</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIAL CARD ──────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Social Proof</p>
+      <h2 class="bk-section-title">Testimonial Card</h2>
+      <div class="cards-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__quote">"</div>
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">Josh delivered stunning listing photos in under 24 hours. Our property went under contract in 3 days — well above asking price.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">SR</div>
+            <div>
+              <div class="testimonial-card__name">Sarah R.</div>
+              <div class="testimonial-card__meta">Realtor, Reno NV</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__quote">"</div>
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">The drone shots made our listing stand out on Zillow. I've booked Josh for every listing since — my clients love the results.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">MK</div>
+            <div>
+              <div class="testimonial-card__name">Mark K.</div>
+              <div class="testimonial-card__meta">Real Estate Agent, Sparks NV</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BLOG CARD ─────────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Content</p>
+      <h2 class="bk-section-title">Blog Cards</h2>
+      <div class="cards-grid">
+        <div class="blog-card">
+          <div class="blog-card__img"><i class="fa-solid fa-image"></i></div>
+          <div class="blog-card__body">
+            <p class="blog-card__tag">Real Estate Tips</p>
+            <h3 class="blog-card__title">Why Reno Realtors Who Use Professional Photography Close 32% Faster</h3>
+            <p class="blog-card__excerpt">The data is clear: listings with professional photos get 118% more online views and sell significantly faster…</p>
+            <div class="blog-card__meta"><span><i class="fa-regular fa-clock"></i> 5 min read</span><span><i class="fa-regular fa-calendar"></i> Mar 2026</span></div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card__img"><i class="fa-solid fa-helicopter"></i></div>
+          <div class="blog-card__body">
+            <p class="blog-card__tag">Drone Photography</p>
+            <h3 class="blog-card__title">Drone vs. Standard Listing Photos: What Reno Buyers Actually Click On</h3>
+            <p class="blog-card__excerpt">Aerial photography boosts listing click-through rates by 68%. Here's why and when drone shots make the biggest difference…</p>
+            <div class="blog-card__meta"><span><i class="fa-regular fa-clock"></i> 4 min read</span><span><i class="fa-regular fa-calendar"></i> Mar 2026</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STAT BADGES ───────────────────────────────────────────── -->
+    <section class="bk-section">
+      <p class="bk-section-label">Proof Points</p>
+      <h2 class="bk-section-title">Stats / Proof Badges</h2>
+      <div class="stats-row">
+        <div class="stat-badge">
+          <div class="stat-badge__num">118%</div>
+          <div class="stat-badge__label">More Online Views</div>
+        </div>
+        <div class="stat-badge">
+          <div class="stat-badge__num">32%</div>
+          <div class="stat-badge__label">Faster Sales</div>
+        </div>
+        <div class="stat-badge">
+          <div class="stat-badge__num">47%</div>
+          <div class="stat-badge__label">Higher $/Sq Ft</div>
+        </div>
+        <div class="stat-badge">
+          <div class="stat-badge__num">24hr</div>
+          <div class="stat-badge__label">Photo Delivery</div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /bk-page -->
+</body>
+</html>

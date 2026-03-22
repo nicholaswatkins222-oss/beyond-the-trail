@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule a Real Estate Photo Shoot | Beyond the Trail Media | Reno NV</title>
+  <meta name="description" content="Book your real estate photography shoot in Reno, Nevada. Fast turnaround, transparent pricing. Schedule online or text Josh directly at 775-338-5537." />
+  <meta name="keywords" content="book real estate photography Reno, schedule listing photos Reno Nevada, real estate photographer booking Reno" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .schedule-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: start;
+    }
+    .schedule-embed {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shd-md);
+      border: 1px solid var(--gray-200);
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .schedule-embed__icon {
+      width: 72px; height: 72px;
+      background: var(--green-muted);
+      border-radius: var(--r-full);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green);
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
+    .schedule-embed__title {
+      font-family: var(--font-h);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .schedule-embed__sub {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      max-width: 360px;
+    }
+    .schedule-sidebar {}
+    .contact-card {
+      background: var(--green);
+      border-radius: var(--r-xl);
+      padding: 32px 28px;
+      margin-bottom: 24px;
+    }
+    .contact-card__title {
+      font-family: var(--font-h);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .contact-card__sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 24px;
+    }
+    .contact-card__item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .contact-card__item:last-of-type { margin-bottom: 24px; }
+    .contact-card__icon {
+      width: 40px; height: 40px;
+      background: rgba(240,160,80,.18);
+      border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--amber);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-card__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2px;
+    }
+    .contact-card__value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .contact-card__value a { color: var(--white); }
+    .info-card {
+      background: var(--off-white);
+      border-radius: var(--r-xl);
+      padding: 28px;
+      border: 1px solid var(--gray-200);
+      margin-bottom: 20px;
+    }
+    .info-card__title {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .info-card__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    .info-card__item:last-child { margin-bottom: 0; }
+    .info-card__item i { color: var(--amber); margin-top: 3px; flex-shrink: 0; font-size: 0.82rem; }
+
+    @media (max-width: 900px) {
+      .schedule-layout { grid-template-columns: 1fr; }
+      .schedule-sidebar { order: -1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="index.html"><img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" /></a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li><li><a href="blog.html">Blog</a></li>
+        <li><a href="schedule.html">Schedule</a></li><li><a href="portal.html">Client Portal</a></li>
+      </ul>
+      <div class="navbar__cta">
+        <a class="navbar__phone" href="tel:7753385537"><i class="fa-solid fa-phone"></i> 775-338-5537</a>
+        <a class="btn btn-primary btn-sm" href="schedule.html">Book a Shoot</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <button class="mobile-menu__close"><i class="fa-solid fa-xmark"></i></button>
+    <nav class="mobile-menu__links">
+      <a href="index.html">Home</a><a href="services.html">Services</a>
+      <a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a>
+      <a href="schedule.html">Schedule</a><a href="portal.html">Client Portal</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a class="mobile-menu__phone" href="tel:7753385537"><i class="fa-solid fa-phone"></i> 775-338-5537</a>
+      <a class="btn btn-amber" href="schedule.html">Book a Shoot</a>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Schedule</span>
+      </nav>
+      <h1 class="page-hero__title">Schedule a Shoot</h1>
+      <p class="page-hero__sub">
+        Book your listing shoot in minutes. Or text Josh directly at 775-338-5537 —
+        he'll get you on the calendar the same day.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="schedule-layout">
+
+        <!-- ── CALENDLY EMBED ────────────────────────────────── -->
+        <div class="schedule-embed">
+          <div class="schedule-embed__icon" aria-hidden="true">
+            <i class="fa-regular fa-calendar-check"></i>
+          </div>
+          <h2 class="schedule-embed__title">Pick Your Date &amp; Time</h2>
+          <p class="schedule-embed__sub">
+            Josh's availability is shown in real time. Choose a slot, fill in your property
+            details, and you're confirmed.
+          </p>
+          <!-- Replace the href below with Josh's actual Calendly link -->
+          <a class="btn btn-primary btn-lg" href="https://calendly.com/beyondthetrailmedia" target="_blank" rel="noopener noreferrer">
+            <i class="fa-regular fa-calendar"></i>
+            Open Scheduling Calendar
+          </a>
+          <p style="margin-top:16px;font-size:0.8rem;color:var(--gray-400);">
+            Opens in a new tab · Powered by Calendly
+          </p>
+        </div>
+        <!-- ── END CALENDLY EMBED ─────────────────────────────── -->
+
+        <!-- ── SIDEBAR ───────────────────────────────────────── -->
+        <div class="schedule-sidebar">
+          <div class="contact-card">
+            <div class="contact-card__title">Prefer to Text or Call?</div>
+            <div class="contact-card__sub">Josh responds the same day — usually within the hour.</div>
+            <div class="contact-card__item">
+              <div class="contact-card__icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="contact-card__label">Call or Text</div>
+                <div class="contact-card__value"><a href="tel:7753385537">775-338-5537</a></div>
+              </div>
+            </div>
+            <div class="contact-card__item">
+              <div class="contact-card__icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="contact-card__label">Email</div>
+                <div class="contact-card__value"><a href="mailto:beyondthetrailmedia@gmail.com">beyondthetrailmedia@gmail.com</a></div>
+              </div>
+            </div>
+            <a class="btn btn-amber" href="tel:7753385537" style="width:100%;justify-content:center;">
+              <i class="fa-solid fa-phone"></i> Call Josh Now
+            </a>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card__title">What to Expect</h3>
+            <div class="info-card__item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>Same-day booking available</strong> — text Josh and he'll find a time that works</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>24-hour photo delivery</strong> — edited photos in your inbox the next day</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>Flat-rate pricing</strong> — no surprises at invoice time</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>No contract required</strong> — book shoot by shoot as needed</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-check"></i>
+              <span><strong>MLS-ready formats</strong> — upload directly to MLS without resizing</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card__title">Service Area</h3>
+            <div class="info-card__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Reno · Sparks · Spanish Springs</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Fernley · Dayton · Silver Springs</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Carson City · Minden · Gardnerville</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Truckee · Lake Tahoe area (call for availability)</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card__title">Packages Starting At</h3>
+            <div class="info-card__item">
+              <i class="fa-solid fa-camera"></i>
+              <span><strong>Adventurer</strong> — $225 (photos + drone + floor plan)</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-star"></i>
+              <span><strong>Explorer</strong> — $325 (most popular)</span>
+            </div>
+            <div class="info-card__item">
+              <i class="fa-solid fa-gem"></i>
+              <span><strong>Trailblazer</strong> — $500 (full package + video)</span>
+            </div>
+            <a class="btn btn-outline" href="services.html" style="width:100%;justify-content:center;margin-top:8px;">
+              View All Packages &amp; Pricing
+            </a>
+          </div>
+        </div>
+        <!-- ── END SIDEBAR ────────────────────────────────────── -->
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-logo"><img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" /></div>
+          <p class="footer__brand-desc">Professional real estate photography for Northern Nevada realtors. Drone photos, floor plans, and listing videos — delivered in 24 hours.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-title">Quick Links</p>
+          <nav class="footer__links">
+            <a href="index.html">Home</a><a href="services.html">Services &amp; Pricing</a>
+            <a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a>
+            <a href="schedule.html">Schedule a Shoot</a><a href="portal.html">Client Portal</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Services</p>
+          <nav class="footer__links">
+            <a href="services.html#mls">MLS Photography</a>
+            <a href="services.html#drone">Drone Photography</a>
+            <a href="services.html#floorplans">Floor Plans</a>
+            <a href="services.html#video">Listing Videos</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <div class="footer__contact-item"><i class="fa-solid fa-phone"></i><a href="tel:7753385537">775-338-5537</a></div>
+          <div class="footer__contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:beyondthetrailmedia@gmail.com">beyondthetrailmedia@gmail.com</a></div>
+          <div class="footer__contact-item"><i class="fa-solid fa-location-dot"></i><span>Spanish Springs, NV 89441</span></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Beyond the Trail Media LLC. All rights reserved.</span>
+        <span>Real Estate Photography · Reno, Nevada</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

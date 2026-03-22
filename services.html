@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Estate Photography Services Reno | Beyond the Trail Media</title>
+  <meta name="description" content="Real estate photography packages for Reno realtors. MLS photos, drone photography, 3D floor plans, and listing videos. Transparent pricing, 24-hour delivery." />
+  <meta name="keywords" content="real estate photography services Reno, drone photography real estate Reno, real estate photography pricing Reno Nevada, floor plan photography, listing video Reno" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Page-specific styles ──────────────────────────────── */
+    .alacarte-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .alacarte-table th {
+      font-family: var(--font-b);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-align: left;
+      padding: 12px 20px;
+      border-bottom: 2px solid var(--green);
+      background: var(--off-white);
+    }
+    .alacarte-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-600);
+      vertical-align: top;
+    }
+    .alacarte-table tr:last-child td { border-bottom: none; }
+    .alacarte-table tr:hover td { background: var(--green-muted); }
+    .alacarte-table .price-col {
+      font-family: var(--font-h);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green);
+      white-space: nowrap;
+    }
+    .alacarte-table .service-name {
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .service-section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .service-section:last-of-type { border-bottom: none; }
+    .service-section__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .service-section__inner.reverse { direction: rtl; }
+    .service-section__inner.reverse > * { direction: ltr; }
+    .service-section__img {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--green-light), var(--green-dark));
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.25);
+      font-size: 5rem;
+      box-shadow: var(--shd-lg);
+    }
+    .service-section__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .service-section__tag {
+      display: inline-block;
+      background: var(--green-muted);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--r-full);
+      margin-bottom: 14px;
+    }
+    .service-section__title {
+      font-family: var(--font-h);
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .service-section__desc {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+    .service-section__features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .service-section__feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    .service-section__feature i {
+      color: var(--amber);
+      margin-top: 4px;
+      flex-shrink: 0;
+      font-size: 0.78rem;
+    }
+    .service-section__price {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-lg);
+      padding: 14px 20px;
+      margin-bottom: 24px;
+    }
+    .service-section__price-from {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+    .service-section__price-num {
+      font-family: var(--font-h);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+    }
+    .service-section__price-note {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 768px) {
+      .service-section__inner { grid-template-columns: 1fr; gap: 32px; }
+      .service-section__inner.reverse { direction: ltr; }
+      .alacarte-table { font-size: 0.82rem; }
+      .alacarte-table th, .alacarte-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ──────────────────────────────────────────────── -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="index.html" aria-label="Beyond the Trail Media — Home">
+        <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" />
+      </a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="portal.html">Client Portal</a></li>
+      </ul>
+      <div class="navbar__cta">
+        <a class="navbar__phone" href="tel:7753385537">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          775-338-5537
+        </a>
+        <a class="btn btn-primary btn-sm" href="schedule.html">Book a Shoot</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ─────────────────────────────────────────── -->
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-menu__close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <nav class="mobile-menu__links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="blog.html">Blog</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="portal.html">Client Portal</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a class="mobile-menu__phone" href="tel:7753385537">
+        <i class="fa-solid fa-phone"></i> 775-338-5537
+      </a>
+      <a class="btn btn-amber" href="schedule.html">Book a Shoot</a>
+    </div>
+  </div>
+
+  <!-- ── PAGE HERO ───────────────────────────────────────────── -->
+  <section class="page-hero" aria-label="Page header">
+    <div class="container page-hero__inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        <span>Services &amp; Pricing</span>
+      </nav>
+      <h1 class="page-hero__title">Services &amp; Pricing</h1>
+      <p class="page-hero__sub">
+        Everything Reno realtors need to get listings online fast — photos, drone, floor plans,
+        and video. Transparent flat-rate pricing with no surprises.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── PACKAGES ────────────────────────────────────────────── -->
+  <section class="section bg-off-white" id="packages" aria-labelledby="packages-heading">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Bundle Packages</span>
+        <div class="section-divider c" aria-hidden="true"></div>
+        <h2 class="section-title" id="packages-heading">Choose Your Package</h2>
+        <p class="section-sub">
+          All packages include 24-hour delivery and cover standard residential properties.
+          Need something custom? See our à la carte options below.
+        </p>
+      </div>
+      <div class="packages-grid">
+        <div class="pkg-card">
+          <div class="pkg-card__name">Adventurer</div>
+          <div class="pkg-card__tagline">Perfect for standard listings</div>
+          <div class="pkg-card__price">$225</div>
+          <div class="pkg-card__per">flat rate · all property sizes</div>
+          <div class="pkg-card__divider"></div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> MLS listing photos (HDR edited)</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Drone photos (up to 10 shots)</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Black &amp; white 2D floor plan</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> 24-hour photo delivery</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> MLS-ready file formats</div>
+          <a class="btn btn-outline pkg-card__cta" href="schedule.html">Book Adventurer</a>
+        </div>
+
+        <div class="pkg-card featured">
+          <div class="pkg-card__badge">Most Popular</div>
+          <div class="pkg-card__name">Explorer</div>
+          <div class="pkg-card__tagline">Best value for active agents</div>
+          <div class="pkg-card__price">$325</div>
+          <div class="pkg-card__per">flat rate · all property sizes</div>
+          <div class="pkg-card__divider"></div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> MLS listing photos (HDR edited)</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Drone photos (up to 10 shots)</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Premium color 2D floor plan</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Interactive floor plan with embedded photos</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> 24-hour photo delivery</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> MLS-ready file formats</div>
+          <a class="btn btn-amber pkg-card__cta" href="schedule.html">Book Explorer</a>
+        </div>
+
+        <div class="pkg-card">
+          <div class="pkg-card__name">Trailblazer</div>
+          <div class="pkg-card__tagline">For luxury &amp; premium listings</div>
+          <div class="pkg-card__price">$500</div>
+          <div class="pkg-card__per">flat rate · all property sizes</div>
+          <div class="pkg-card__divider"></div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> MLS listing photos (HDR edited)</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Drone photos + drone video</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Neighborhood highlight video</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Premium 3D floor plan</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Edited social media video reel</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Interactive floor plan with photos</div>
+          <div class="pkg-card__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> 24-hour delivery</div>
+          <a class="btn btn-outline pkg-card__cta" href="schedule.html">Book Trailblazer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE DETAILS ─────────────────────────────────────── -->
+  <section class="section bg-white" aria-labelledby="details-heading">
+    <div class="container">
+      <div class="section-header centered" style="margin-bottom:0;">
+        <span class="section-label">Service Details</span>
+        <div class="section-divider c" aria-hidden="true"></div>
+        <h2 class="section-title" id="details-heading">What's Included in Each Service</h2>
+      </div>
+    </div>
+
+    <!-- MLS Photography -->
+    <div class="container">
+      <div class="service-section" id="mls">
+        <div class="service-section__inner">
+          <div class="service-section__img" aria-hidden="true">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <div>
+            <span class="service-section__tag">Most Requested</span>
+            <h3 class="service-section__title">MLS Listing Photography</h3>
+            <p class="service-section__desc">
+              High-quality, HDR-processed interior and exterior photography designed specifically
+              for MLS listings. Every shot is composed to make rooms feel bright, open, and
+              inviting — the kind of photos that make buyers stop scrolling and book a showing.
+            </p>
+            <div class="service-section__features">
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Interior + exterior shots, fully edited</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> HDR processing for balanced exposure</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Includes 2D floor plan</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> MLS-ready file formats delivered in 24 hours</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Available for all property sizes</div>
+            </div>
+            <div class="service-section__price">
+              <span class="service-section__price-from">Starting at</span>
+              <span class="service-section__price-num">$150</span>
+              <span class="service-section__price-note">· scales by sq ft</span>
+            </div>
+            <a class="btn btn-primary" href="schedule.html">Book MLS Photos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drone Photography -->
+      <div class="service-section" id="drone">
+        <div class="service-section__inner reverse">
+          <div class="service-section__img" aria-hidden="true">
+            <i class="fa-solid fa-helicopter"></i>
+          </div>
+          <div>
+            <span class="service-section__tag">68% More Clicks</span>
+            <h3 class="service-section__title">Drone Photography &amp; Video</h3>
+            <p class="service-section__desc">
+              FAA-certified aerial photography that shows off your listing from angles no ground
+              camera can capture. Drone shots showcase lot size, proximity to amenities, and the
+              surrounding neighborhood — giving buyers the full picture before they ever visit.
+            </p>
+            <div class="service-section__features">
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> FAA Part 107 certified pilot</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Up to 10 aerial listing photos</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Drone video (up to 60 or 120 seconds)</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Available for vacant land within 25 miles</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Neighborhood highlight video option</div>
+            </div>
+            <div class="service-section__price">
+              <span class="service-section__price-from">Starting at</span>
+              <span class="service-section__price-num">$125</span>
+              <span class="service-section__price-note">· residential properties</span>
+            </div>
+            <a class="btn btn-primary" href="schedule.html">Book Drone Photos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floor Plans -->
+      <div class="service-section" id="floorplans">
+        <div class="service-section__inner">
+          <div class="service-section__img" aria-hidden="true">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <div>
+            <span class="service-section__tag">Pre-Qualify Buyers</span>
+            <h3 class="service-section__title">2D &amp; 3D Floor Plans</h3>
+            <p class="service-section__desc">
+              Floor plans help buyers understand the layout before they visit — meaning you get
+              more qualified showings and fewer tire-kickers. Our interactive floor plans embed
+              your listing photos directly into the layout so buyers can explore room by room.
+            </p>
+            <div class="service-section__features">
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Black &amp; white 2D floor plan (included with MLS photos)</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Premium color 2D floor plan with dimensions</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Premium 3D floor plan with room labels</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Interactive floor plan with embedded listing photos</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Priced by square footage</div>
+            </div>
+            <div class="service-section__price">
+              <span class="service-section__price-from">2D from</span>
+              <span class="service-section__price-num">$50</span>
+              <span class="service-section__price-note">· 3D from $125</span>
+            </div>
+            <a class="btn btn-primary" href="schedule.html">Book Floor Plans</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video -->
+      <div class="service-section" id="video">
+        <div class="service-section__inner reverse">
+          <div class="service-section__img" aria-hidden="true">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <div>
+            <span class="service-section__tag">Social Ready</span>
+            <h3 class="service-section__title">Listing Videos &amp; Reels</h3>
+            <p class="service-section__desc">
+              Video listings generate 403% more inquiries than photo-only listings. We produce
+              professional walkthrough videos and social media reels edited and optimized for
+              Instagram, Facebook, TikTok, and MLS video upload — ready to post the same week.
+            </p>
+            <div class="service-section__features">
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Listing walkthrough video (up to 60 or 120 seconds)</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Neighborhood highlight video</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Edited social media reel (included in Trailblazer)</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> Optimized for Instagram, Facebook, TikTok</div>
+              <div class="service-section__feature"><i class="fa-solid fa-check" aria-hidden="true"></i> MLS video format available</div>
+            </div>
+            <div class="service-section__price">
+              <span class="service-section__price-from">Starting at</span>
+              <span class="service-section__price-num">$250</span>
+              <span class="service-section__price-note">· 60-second cut</span>
+            </div>
+            <a class="btn btn-primary" href="schedule.html">Book Listing Video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── À LA CARTE ──────────────────────────────────────────── -->
+  <section class="section bg-off-white" id="alacarte" aria-labelledby="alacarte-heading">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Individual Services</span>
+        <div class="section-divider c" aria-hidden="true"></div>
+        <h2 class="section-title" id="alacarte-heading">À La Carte Pricing</h2>
+        <p class="section-sub">
+          Need just one piece? Mix and match individual services. All prices are flat-rate
+          by property size — no haggling, no surprises.
+        </p>
+      </div>
+
+      <div style="background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shd-sm);border:1px solid var(--gray-200);overflow:hidden;">
+        <table class="alacarte-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Details / Square Footage</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="service-name">MLS Photos</td>
+              <td>0–1,500 sq ft · includes 2D floor plan</td>
+              <td class="price-col">$150</td>
+            </tr>
+            <tr>
+              <td class="service-name">MLS Photos</td>
+              <td>1,501–2,500 sq ft · includes 2D floor plan</td>
+              <td class="price-col">$180</td>
+            </tr>
+            <tr>
+              <td class="service-name">MLS Photos</td>
+              <td>2,501–3,500 sq ft · includes 2D floor plan</td>
+              <td class="price-col">$200</td>
+            </tr>
+            <tr>
+              <td class="service-name">MLS Photos</td>
+              <td>3,501–4,500 sq ft · includes 2D floor plan</td>
+              <td class="price-col">$220</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Drone Photos</td>
+              <td>Up to 10 listing photos · residential</td>
+              <td class="price-col">$125</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Drone Photos</td>
+              <td>Vacant land within 25 miles</td>
+              <td class="price-col">$175</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Drone Photos</td>
+              <td>Vacant land over 25 miles</td>
+              <td class="price-col">$200</td>
+            </tr>
+            <tr>
+              <td class="service-name">Listing Video</td>
+              <td>Up to 60 seconds · edited walkthrough</td>
+              <td class="price-col">$250</td>
+            </tr>
+            <tr>
+              <td class="service-name">Listing Video</td>
+              <td>Up to 120 seconds · edited walkthrough</td>
+              <td class="price-col">$350</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Premium 2D Floor Plan</td>
+              <td>0–1,500 sq ft</td>
+              <td class="price-col">$50</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Premium 2D Floor Plan</td>
+              <td>1,501–2,500 sq ft</td>
+              <td class="price-col">$75</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Premium 2D Floor Plan</td>
+              <td>2,501–3,500 sq ft</td>
+              <td class="price-col">$100</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Premium 2D Floor Plan</td>
+              <td>3,501–4,500 sq ft</td>
+              <td class="price-col">$125</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Premium 2D Floor Plan</td>
+              <td>4,501–6,500 sq ft</td>
+              <td class="price-col">$150</td>
+            </tr>
+            <tr>
+              <td class="service-name">Premium 3D Floor Plan</td>
+              <td>0–1,500 sq ft</td>
+              <td class="price-col">$125</td>
+            </tr>
+            <tr>
+              <td class="service-name">Premium 3D Floor Plan</td>
+              <td>1,501–2,500 sq ft</td>
+              <td class="price-col">$150</td>
+            </tr>
+            <tr>
+              <td class="service-name">Premium 3D Floor Plan</td>
+              <td>2,501–3,500 sq ft</td>
+              <td class="price-col">$175</td>
+            </tr>
+            <tr>
+              <td class="service-name">Premium 3D Floor Plan</td>
+              <td>3,501–4,500 sq ft</td>
+              <td class="price-col">$200</td>
+            </tr>
+            <tr>
+              <td class="service-name">Premium 3D Floor Plan</td>
+              <td>4,501–6,500 sq ft</td>
+              <td class="price-col">$225</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Furnished Rental Photography</td>
+              <td>0–1,500 sq ft</td>
+              <td class="price-col">$300</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Furnished Rental Photography</td>
+              <td>1,501–2,500 sq ft</td>
+              <td class="price-col">$425</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Furnished Rental Photography</td>
+              <td>2,501–3,500 sq ft</td>
+              <td class="price-col">$550</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Furnished Rental Photography</td>
+              <td>3,501–4,500 sq ft</td>
+              <td class="price-col">$675</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td class="service-name">Furnished Rental Photography</td>
+              <td>4,501–6,500 sq ft</td>
+              <td class="price-col">$800</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px;font-size:0.82rem;color:var(--gray-400);text-align:center;">
+        Not sure which option fits your listing? <a href="tel:7753385537" style="color:var(--amber);font-weight:600;">Text or call Josh</a> and he'll help you pick the right package.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CTA STRIP ───────────────────────────────────────────── -->
+  <section class="cta-strip" aria-labelledby="cta-heading">
+    <div class="container cta-strip__inner">
+      <h2 class="cta-strip__title" id="cta-heading">Ready to Book?</h2>
+      <p class="cta-strip__sub">
+        Photos delivered in 24 hours. Transparent pricing. No contracts.
+      </p>
+      <div class="cta-strip__actions">
+        <a class="btn btn-amber btn-lg" href="schedule.html">
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          Schedule a Shoot
+        </a>
+        <a class="btn btn-ghost btn-lg" href="tel:7753385537">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          Call or Text Josh
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────── -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-logo">
+            <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" />
+          </div>
+          <p class="footer__brand-desc">
+            Professional real estate photography for Northern Nevada realtors.
+            Drone photos, floor plans, and listing videos — delivered in 24 hours.
+          </p>
+          <div class="footer__social" aria-label="Social media links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-title">Quick Links</p>
+          <nav class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services &amp; Pricing</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="blog.html">Blog</a>
+            <a href="schedule.html">Schedule a Shoot</a>
+            <a href="portal.html">Client Portal</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Services</p>
+          <nav class="footer__links">
+            <a href="#mls">MLS Photography</a>
+            <a href="#drone">Drone Photography</a>
+            <a href="#floorplans">Floor Plans</a>
+            <a href="#video">Listing Videos</a>
+            <a href="#alacarte">À La Carte</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Contact</p>
+          <div class="footer__contact-item">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:7753385537">775-338-5537</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:beyondthetrailmedia@gmail.com">beyondthetrailmedia@gmail.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>Spanish Springs, NV 89441<br />Serving All of Northern Nevada</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Beyond the Trail Media LLC. All rights reserved.</span>
+        <span>Real Estate Photography · Reno, Nevada</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
