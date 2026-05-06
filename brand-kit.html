@@ -123,7 +123,6 @@
     .logo-box.light { background: var(--white); }
     .logo-box.dark  { background: var(--green-dark); border-color: var(--green-dark); }
     .logo-box img   { height: 80px; width: auto; }
-    .logo-box.dark img { filter: invert(1) brightness(2); }
 
     /* ─── Colors ───────────────────────────────────────────────── */
     .color-grid {
@@ -597,6 +596,30 @@
       justify-content: center;
       gap: 16px;
       padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-preview__hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .nav-preview__hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(30,51,41,0.75), rgba(45,74,62,0.55), rgba(61,100,84,0.45));
+      z-index: 0;
+    }
+    .nav-preview__hero > h2,
+    .nav-preview__hero > p,
+    .nav-preview__hero > div {
+      position: relative;
+      z-index: 1;
     }
     .nav-preview__hero h2 {
       font-family: var(--font-h);
@@ -624,13 +647,13 @@
       <div class="logo-row">
         <div class="logo-swatch">
           <div class="logo-box light">
-            <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media logo" />
+            <img src="Logo/logo-green.png" alt="Beyond the Trail Media logo" />
           </div>
           <span>On White</span>
         </div>
         <div class="logo-swatch">
           <div class="logo-box dark">
-            <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media logo" />
+            <img src="Logo/logo-white.png" alt="Beyond the Trail Media logo" />
           </div>
           <span>On Dark Green (inverted)</span>
         </div>
@@ -781,7 +804,7 @@
       <div class="nav-preview">
         <div class="nav-preview__bar">
           <div class="nav-preview__logo">
-            <img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" />
+            <img src="Logo/logo-green.png" alt="Beyond the Trail Media" />
           </div>
           <ul class="nav-preview__links">
             <li><a href="#" class="active">Home</a></li>
@@ -796,6 +819,7 @@
           </div>
         </div>
         <div class="nav-preview__hero">
+          <img src="photos-web/141-country-ranch-road-1/DJI_20260226135742_0412_D.jpg" width="1600" height="900" loading="lazy" alt="Country Ranch Road aerial — brand hero reference" />
           <h2>Professional Listing Photos That Sell</h2>
           <p>Reno's trusted real estate photography team — drone, floor plans &amp; more</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">

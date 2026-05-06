@@ -18,10 +18,14 @@
     .article-hero-img {
       width: 100%; aspect-ratio: 16/7; border-radius: var(--r-xl);
       background: linear-gradient(135deg, var(--green-light), var(--green-dark));
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.2); font-size: 6rem;
+      display: block; object-fit: cover;
       margin-bottom: 48px; overflow: hidden;
       box-shadow: var(--shd-lg);
+    }
+    .article-photo {
+      width: 100%; aspect-ratio: 3/2; border-radius: var(--r-xl);
+      box-shadow: var(--shd-lg); margin: 36px 0;
+      object-fit: cover; display: block;
     }
     .article-body h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); margin: 40px 0 14px; color: var(--green); }
     .article-body h3 { font-size: 1.15rem; margin: 28px 0 10px; color: var(--green); }
@@ -59,12 +63,13 @@
 
   <nav class="navbar">
     <div class="navbar__inner">
-      <a class="navbar__logo" href="index.html"><img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" /></a>
+      <a class="navbar__logo" href="index.html"><img src="Logo/logo-green.png" alt="Beyond the Trail Media" /></a>
       <ul class="navbar__links">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="portal.html">Client Portal</a></li>
       </ul>
@@ -81,7 +86,7 @@
     <nav class="mobile-menu__links">
       <a href="index.html">Home</a><a href="services.html">Services</a>
       <a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a>
-      <a href="schedule.html">Schedule</a><a href="portal.html">Client Portal</a>
+      <a href="gallery.html">Gallery</a><a href="schedule.html">Schedule</a><a href="portal.html">Client Portal</a>
     </nav>
     <div class="mobile-menu__footer">
       <a class="mobile-menu__phone" href="tel:7753385537"><i class="fa-solid fa-phone"></i> 775-338-5537</a>
@@ -118,7 +123,7 @@
           <span><i class="fa-regular fa-clock"></i> 5 min read</span>
         </div>
 
-        <div class="article-hero-img" aria-hidden="true"><i class="fa-solid fa-camera-retro"></i></div>
+        <img class="article-hero-img" src="photos-web/8211-dixon-lane/Living_20Room.jpg" alt="Sunlit living room interior of a Reno home, professionally photographed" width="1600" height="700" loading="eager" />
 
         <div class="article-body">
           <p>
@@ -167,6 +172,7 @@
             Professional photography doesn't just document a property — it sells a lifestyle. That's
             the psychology behind the 118% view increase.
           </p>
+          <img class="article-photo" src="photos-thumb/8211-dixon-lane/Dining_20from_20kitchen.jpg" alt="Open dining and kitchen view inside a Reno home — the kind of shot buyers stop scrolling for" width="900" height="600" loading="lazy" />
 
           <h2>What "Professional" Actually Means in Practice</h2>
           <p>
@@ -180,6 +186,7 @@
             <li><strong>Exterior timing</strong> — Shooting exteriors in optimal light (overcast for even light, or golden hour for warmth) rather than midday harsh shadows.</li>
             <li><strong>Post-processing and color correction</strong> — Professional editing that makes colors accurate and appealing rather than washed out or oversaturated.</li>
           </ul>
+          <img class="article-photo" src="photos-thumb/2975-cahal/Cahal-1.jpg" alt="HDR-edited interior shot of a Reno listing showing balanced light and natural color" width="900" height="600" loading="lazy" />
 
           <h2>The ROI Calculation Realtors Miss</h2>
           <p>
@@ -237,7 +244,7 @@
             <h3>Keep Reading</h3>
             <div class="blog-grid" style="grid-template-columns:repeat(2,1fr);">
               <a class="blog-card" href="blog-drone-vs-standard-photos.html">
-                <div class="blog-card__img" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div>
+                <div class="blog-card__img" aria-hidden="true"><img src="photos-thumb/141-country-ranch-road-1/DJI_20260226135742_0412_D.jpg" alt="" loading="lazy" width="600" height="400" /></div>
                 <div class="blog-card__body">
                   <p class="blog-card__tag">Drone Photography</p>
                   <h3 class="blog-card__title">Drone vs. Standard Photos: What Reno Buyers Click On</h3>
@@ -245,7 +252,7 @@
                 </div>
               </a>
               <a class="blog-card" href="blog-real-estate-photography-pricing-reno.html">
-                <div class="blog-card__img" aria-hidden="true"><i class="fa-solid fa-dollar-sign"></i></div>
+                <div class="blog-card__img" aria-hidden="true"><img src="photos-thumb/2198-sprague/Sprague.jpg" alt="" loading="lazy" width="600" height="400" /></div>
                 <div class="blog-card__body">
                   <p class="blog-card__tag">Pricing Guide</p>
                   <h3 class="blog-card__title">Complete Guide to Real Estate Photography Pricing in Reno</h3>
@@ -263,7 +270,7 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <div class="footer__brand-logo"><img src="Logo/Screenshot 2026-03-22 145829.png" alt="Beyond the Trail Media" /></div>
+          <div class="footer__brand-logo"><img src="Logo/logo-white.png" alt="Beyond the Trail Media" /></div>
           <p class="footer__brand-desc">Professional real estate photography for Northern Nevada realtors. Drone photos, floor plans, and listing videos — delivered in 24 hours.</p>
           <div class="footer__social">
             <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>

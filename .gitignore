@@ -5,3 +5,10 @@ node_modules/
 Thumbs.db
 
 .vercel
+
+# Full-resolution photo originals — kept locally as masters, NOT deployed.
+# Only photos-web/ (1600px) and photos-thumb/ (600px) ship to production.
+photos/
+
+# Logo preview composites (debug artifacts)
+Logo/preview-*.png
