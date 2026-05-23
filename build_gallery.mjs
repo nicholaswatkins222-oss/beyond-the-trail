@@ -31,6 +31,51 @@ function nameFromSlug(slug) {
   return s.replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+// Known city per slug. Everything else falls back to "Northern Nevada".
+const CITY_BY_SLUG = {
+  '1222-eagle-rock':           'Reno, NV',
+  '1281-bismark-peak':         'Reno, NV',
+  '141-country-ranch-road-1':  'Spanish Springs, NV',
+  '3338-current-final':        'Reno, NV',
+  '8211-dixon-lane':           'Reno, NV',
+  '629-westwinds':             'Sparks, NV',
+  '2975-cahal':                'Reno, NV',
+  '450-riparian':              'Carson City, NV',
+  '6877-victor':               'Reno, NV',
+  '3935-hazy-swale':           'Reno, NV',
+  '1391-winnies-ln':           'Reno, NV',
+  '45-sheena-ct':              'Sparks, NV',
+  '375-hoge':                  'Reno, NV',
+  '10166-mesa-cortona':        'Reno, NV',
+  '2198-sprague':              'Reno, NV',
+  '676-w-riverview':           'Reno, NV',
+  '9812-salty-dog':            'Reno, NV',
+  '140-griswold':              'Reno, NV',
+  '2351-millville':            'Reno, NV',
+  '5530-spandrell':            'Sparks, NV',
+  '17635-lake-powell':         'Reno, NV',
+  '613-smithridge':            'Reno, NV',
+  '1531-gault':                'Reno, NV',
+  '435-pine-meadows':          'Reno, NV',
+  '2116-oppio':                'Sparks, NV',
+  '2335-roundhouse-rd':        'Sparks, NV',
+  '1000-beck-unit-267':        'Reno, NV',
+  '1544-chester-square':       'Reno, NV',
+  '1706-sue':                  'Reno, NV',
+  '2125-sutro':                'Reno, NV',
+  '375-d-street':              'Sparks, NV',
+  '414-prosecco-way':          'Sparks, NV',
+  '3925-clear-acre':           'Reno, NV',
+  'redrock-property':          'Reno, NV',
+  '1541-g-street':             'Sparks, NV',
+  '338-wheeler':               'Reno, NV',
+  '721-e-sierra':              'Reno, NV',
+  'doyle-land':                'Doyle, CA',
+};
+function cityForSlug(slug) {
+  return CITY_BY_SLUG[slug] || 'Northern Nevada';
+}
+
 function encodeSegment(s) {
   return encodeURIComponent(s);
 }
@@ -59,6 +104,7 @@ function buildManifest() {
     houses.push({
       slug,
       name: nameFromSlug(slug),
+      city: cityForSlug(slug),
       photoCount: photos.length,
       photos,
     });
@@ -81,7 +127,6 @@ const NAV_HTML = (active, prefix = '') => `
         <li><a href="${prefix}gallery.html"${active === 'gallery' ? ' class="active"' : ''}>Gallery</a></li>
         <li><a href="${prefix}blog.html"${active === 'blog' ? ' class="active"' : ''}>Blog</a></li>
         <li><a href="${prefix}schedule.html"${active === 'schedule' ? ' class="active"' : ''}>Schedule</a></li>
-        <li><a href="${prefix}portal.html"${active === 'portal' ? ' class="active"' : ''}>Client Portal</a></li>
       </ul>
       <div class="navbar__cta">
         <a class="navbar__phone" href="tel:7753385537" aria-label="Call Josh">
@@ -105,7 +150,6 @@ const NAV_HTML = (active, prefix = '') => `
       <a href="${prefix}gallery.html">Gallery</a>
       <a href="${prefix}blog.html">Blog</a>
       <a href="${prefix}schedule.html">Schedule</a>
-      <a href="${prefix}portal.html">Client Portal</a>
     </nav>
     <div class="mobile-menu__footer">
       <a class="mobile-menu__phone" href="tel:7753385537">
@@ -144,7 +188,6 @@ const FOOTER_HTML = (prefix = '') => `
             <a href="${prefix}testimonials.html">Testimonials</a>
             <a href="${prefix}blog.html">Blog</a>
             <a href="${prefix}schedule.html">Schedule a Shoot</a>
-            <a href="${prefix}portal.html">Client Portal</a>
           </nav>
         </div>
         <div>
@@ -206,13 +249,14 @@ function renderIndex(houses) {
     .map((h) => {
       const cover = h.photos[0];
       const thumb = `photos-thumb/${encodeSegment(h.slug)}/${encodeSegment(cover)}`;
-      return `      <a class="gallery-card" href="gallery/${encodeSegment(h.slug)}.html" aria-label="${h.name} — ${h.photoCount} photos">
+      return `      <a class="gallery-card" href="gallery/${encodeSegment(h.slug)}.html" aria-label="${h.name}, ${h.city} — ${h.photoCount} photos">
         <div class="gallery-card__img">
           <img src="${thumb}" alt="" loading="lazy" />
+          <span class="gallery-card__count" aria-hidden="true"><i class="fa-regular fa-images"></i> ${h.photoCount}</span>
         </div>
         <div class="gallery-card__body">
           <h3 class="gallery-card__title">${h.name}</h3>
-          <p class="gallery-card__meta"><i class="fa-regular fa-images" aria-hidden="true"></i> ${h.photoCount} photos</p>
+          <p class="gallery-card__location">${h.city}</p>
         </div>
       </a>`;
     })

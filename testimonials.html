@@ -12,32 +12,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .testimonials-full-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .testimonial-card--lg {
-      grid-column: span 2;
-    }
-    .placeholder-notice {
-      background: rgba(240,160,80,.1);
-      border: 1px dashed var(--amber);
+    .reviews-embed-wrap {
+      background: var(--cream, #faf6ee);
       border-radius: var(--r-lg);
-      padding: 16px 20px;
-      font-size: 0.82rem;
-      color: var(--amber);
-      font-weight: 600;
+      padding: 12px;
+    }
+    .reviews-embed-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 48px 24px;
       text-align: center;
-      margin-bottom: 36px;
+      color: var(--ink, #2a2a2a);
     }
-    @media (max-width: 900px) {
-      .testimonials-full-grid { grid-template-columns: 1fr 1fr; }
-      .testimonial-card--lg { grid-column: span 2; }
-    }
-    @media (max-width: 600px) {
-      .testimonials-full-grid { grid-template-columns: 1fr; }
-      .testimonial-card--lg { grid-column: span 1; }
+    .reviews-embed-fallback i { font-size: 2.4rem; color: var(--amber, #d8973c); }
+    .reviews-embed-fallback a {
+      color: var(--amber, #d8973c);
+      font-weight: 600;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -49,7 +42,7 @@
       <ul class="navbar__links">
         <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
         <li><a href="testimonials.html">Testimonials</a></li><li><a href="blog.html">Blog</a></li>
-        <li><a href="gallery.html">Gallery</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="portal.html">Client Portal</a></li>
+        <li><a href="gallery.html">Gallery</a></li><li><a href="schedule.html">Schedule</a></li>
       </ul>
       <div class="navbar__cta">
         <a class="navbar__phone" href="tel:7753385537"><i class="fa-solid fa-phone"></i> 775-338-5537</a>
@@ -64,7 +57,7 @@
     <nav class="mobile-menu__links">
       <a href="index.html">Home</a><a href="services.html">Services</a>
       <a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a>
-      <a href="gallery.html">Gallery</a><a href="schedule.html">Schedule</a><a href="portal.html">Client Portal</a>
+      <a href="gallery.html">Gallery</a><a href="schedule.html">Schedule</a>
     </nav>
     <div class="mobile-menu__footer">
       <a class="mobile-menu__phone" href="tel:7753385537"><i class="fa-solid fa-phone"></i> 775-338-5537</a>
@@ -99,117 +92,28 @@
     </div>
   </div>
 
-  <!-- ── TESTIMONIALS GRID ──────────────────────────────────── -->
+  <!-- ── GOOGLE REVIEWS EMBED ───────────────────────────────── -->
+  <!--
+    SETUP (one-time, by Josh):
+      1. Go to elfsight.com → sign up (free tier covers ~200 views/day)
+      2. Create a "Google Reviews" widget → connect it to the Beyond the Trail
+         Google Business Profile → choose layout (recommend: Grid, 3 columns)
+      3. Copy the data-elfsight-app-lazy class hash from the embed code
+      4. Replace `REPLACE_WITH_ELFSIGHT_WIDGET_ID` below with that hash
+    Reviews then update automatically whenever a new Google review is posted.
+  -->
   <section class="section bg-off-white">
     <div class="container">
-      <!-- Replace placeholder notice before launch -->
-      <div class="placeholder-notice">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        These testimonials are placeholder content — replace with real quotes from Josh's clients before launch.
-      </div>
-
-      <div class="testimonials-full-grid">
-
-        <div class="testimonial-card testimonial-card--lg">
-          <div class="testimonial-card__quote">"</div>
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__text" style="font-size:1.05rem;">
-            Josh delivered stunning listing photos in under 24 hours. Our property in South
-            Meadows went under contract in 3 days — well above asking price. The drone shots
-            showed off the mountain views in a way I never could have captured with my phone.
-            I've already booked him for my next three listings.
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">SR</div>
-            <div>
-              <div class="testimonial-card__name">Sarah R.</div>
-              <div class="testimonial-card__meta">Realtor · Reno, NV</div>
-            </div>
+      <div class="reviews-embed-wrap">
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-REPLACE_WITH_ELFSIGHT_WIDGET_ID" data-elfsight-app-lazy>
+          <!-- Fallback shown if the Elfsight script can't load (rare) -->
+          <div class="reviews-embed-fallback">
+            <i class="fa-brands fa-google"></i>
+            <p>Loading our latest Google reviews… If they don't appear,
+              <a href="https://www.google.com/search?q=Beyond+the+Trail+Media+Reno+reviews" target="_blank" rel="noopener">read them directly on Google</a>.</p>
           </div>
         </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-card__quote">"</div>
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__text">
-            The drone shots made our Sparks listing stand out on Zillow. Got more clicks in
-            the first week than comparable listings had in a month. Josh is my go-to.
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">MK</div>
-            <div>
-              <div class="testimonial-card__name">Mark K.</div>
-              <div class="testimonial-card__meta">Real Estate Agent · Sparks, NV</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-card__quote">"</div>
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__text">
-            The interactive floor plan was a game changer. Buyers came to the showing
-            already knowing the layout — less time explaining, more time selling.
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">AL</div>
-            <div>
-              <div class="testimonial-card__name">Amanda L.</div>
-              <div class="testimonial-card__meta">Listing Agent · Carson City, NV</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-card__quote">"</div>
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__text">
-            I used to think professional photography was only worth it on luxury listings.
-            Josh proved me wrong. My $350K listing sold in 4 days with his photos.
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">DM</div>
-            <div>
-              <div class="testimonial-card__name">David M.</div>
-              <div class="testimonial-card__meta">Realtor · Fernley, NV</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-card__quote">"</div>
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__text">
-            Fast, professional, and responsive. I texted Josh at 9am and had a shoot
-            booked by noon. Photos were in my inbox the next morning. That's how it should work.
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">RT</div>
-            <div>
-              <div class="testimonial-card__name">Rachel T.</div>
-              <div class="testimonial-card__meta">Real Estate Agent · Spanish Springs, NV</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card testimonial-card--lg">
-          <div class="testimonial-card__quote">"</div>
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__text" style="font-size:1.05rem;">
-            We listed a vacant lot in Spanish Springs that had been sitting on the market for
-            two months with terrible phone photos. Josh came out, did drone shots and ground
-            coverage, and we had an offer in 10 days. The aerial shots showed the mountain
-            views and the lot topography in a way that completely changed buyer interest.
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">JB</div>
-            <div>
-              <div class="testimonial-card__name">Jennifer B.</div>
-              <div class="testimonial-card__meta">Listing Agent · Spanish Springs, NV</div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -244,7 +148,7 @@
           <nav class="footer__links">
             <a href="index.html">Home</a><a href="services.html">Services &amp; Pricing</a>
             <a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a>
-            <a href="schedule.html">Schedule a Shoot</a><a href="portal.html">Client Portal</a>
+            <a href="schedule.html">Schedule a Shoot</a>
           </nav>
         </div>
         <div>

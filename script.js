@@ -85,6 +85,34 @@
   });
 })();
 
+/* ── Floating "Choose Your Package" button ─────────────────── */
+(function () {
+  const btn = document.querySelector('.scroll-to-pkg');
+  const pkg = document.getElementById('packages');
+  if (!btn || !pkg) return;
+
+  // Show button only after the user has scrolled past the hero AND
+  // the packages section is NOT currently in view.
+  let scrolledPastHero = false;
+  let packagesInView   = false;
+  const refresh = () => btn.classList.toggle('visible', scrolledPastHero && !packagesInView);
+
+  // Show after first viewport's worth of scroll.
+  const onScroll = () => {
+    scrolledPastHero = window.scrollY > window.innerHeight * 0.6;
+    refresh();
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Hide while packages section is on screen.
+  const io = new IntersectionObserver((entries) => {
+    packagesInView = entries[0].isIntersecting;
+    refresh();
+  }, { threshold: 0.15 });
+  io.observe(pkg);
+})();
+
 /* ── Contact form submission ────────────────────────────────── */
 (function () {
   const form = document.getElementById('contact-form');
