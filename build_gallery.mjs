@@ -233,6 +233,9 @@ const HEAD_HTML = (title, description, prefix = '') => `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="${prefix}favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="${prefix}favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="${prefix}apple-touch-icon.png" />
   <title>${title}</title>
   <meta name="description" content="${description}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
